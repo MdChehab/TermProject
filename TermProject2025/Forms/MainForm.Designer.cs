@@ -23,6 +23,8 @@ namespace TermProject2025.Forms
             this.colType = new System.Windows.Forms.ColumnHeader();
             this.colDate = new System.Windows.Forms.ColumnHeader();
             this.btnAddItem = new System.Windows.Forms.Button();
+            this.btnEditItem = new System.Windows.Forms.Button();
+            this.btnDeleteItem = new System.Windows.Forms.Button();
             this.btnPasswordGenerator = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.txtDetails = new System.Windows.Forms.TextBox();
@@ -46,6 +48,8 @@ namespace TermProject2025.Forms
             //
             this.splitContainer1.Panel1.Controls.Add(this.btnLogout);
             this.splitContainer1.Panel1.Controls.Add(this.btnPasswordGenerator);
+            this.splitContainer1.Panel1.Controls.Add(this.btnDeleteItem);
+            this.splitContainer1.Panel1.Controls.Add(this.btnEditItem);
             this.splitContainer1.Panel1.Controls.Add(this.btnAddItem);
             this.splitContainer1.Panel1.Controls.Add(this.lstVaultItems);
             //
@@ -71,6 +75,7 @@ namespace TermProject2025.Forms
             this.lstVaultItems.UseCompatibleStateImageBehavior = false;
             this.lstVaultItems.View = System.Windows.Forms.View.Details;
             this.lstVaultItems.SelectedIndexChanged += new System.EventHandler(this.lstVaultItems_SelectedIndexChanged);
+            this.lstVaultItems.DoubleClick += new System.EventHandler(this.lstVaultItems_DoubleClick);
             //
             // colName
             //
@@ -91,28 +96,48 @@ namespace TermProject2025.Forms
             //
             this.btnAddItem.Location = new System.Drawing.Point(10, 460);
             this.btnAddItem.Name = "btnAddItem";
-            this.btnAddItem.Size = new System.Drawing.Size(120, 30);
+            this.btnAddItem.Size = new System.Drawing.Size(80, 30);
             this.btnAddItem.TabIndex = 1;
             this.btnAddItem.Text = "Add Item";
             this.btnAddItem.UseVisualStyleBackColor = true;
             this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             //
+            // btnEditItem
+            //
+            this.btnEditItem.Location = new System.Drawing.Point(95, 460);
+            this.btnEditItem.Name = "btnEditItem";
+            this.btnEditItem.Size = new System.Drawing.Size(80, 30);
+            this.btnEditItem.TabIndex = 2;
+            this.btnEditItem.Text = "Edit Item";
+            this.btnEditItem.UseVisualStyleBackColor = true;
+            this.btnEditItem.Click += new System.EventHandler(this.btnEditItem_Click);
+            //
+            // btnDeleteItem
+            //
+            this.btnDeleteItem.Location = new System.Drawing.Point(180, 460);
+            this.btnDeleteItem.Name = "btnDeleteItem";
+            this.btnDeleteItem.Size = new System.Drawing.Size(80, 30);
+            this.btnDeleteItem.TabIndex = 3;
+            this.btnDeleteItem.Text = "Delete";
+            this.btnDeleteItem.UseVisualStyleBackColor = true;
+            this.btnDeleteItem.Click += new System.EventHandler(this.btnDeleteItem_Click);
+            //
             // btnPasswordGenerator
             //
-            this.btnPasswordGenerator.Location = new System.Drawing.Point(140, 460);
+            this.btnPasswordGenerator.Location = new System.Drawing.Point(10, 495);
             this.btnPasswordGenerator.Name = "btnPasswordGenerator";
-            this.btnPasswordGenerator.Size = new System.Drawing.Size(120, 30);
-            this.btnPasswordGenerator.TabIndex = 2;
-            this.btnPasswordGenerator.Text = "Password Gen";
+            this.btnPasswordGenerator.Size = new System.Drawing.Size(165, 30);
+            this.btnPasswordGenerator.TabIndex = 4;
+            this.btnPasswordGenerator.Text = "Password Generator";
             this.btnPasswordGenerator.UseVisualStyleBackColor = true;
             this.btnPasswordGenerator.Click += new System.EventHandler(this.btnPasswordGenerator_Click);
             //
             // btnLogout
             //
-            this.btnLogout.Location = new System.Drawing.Point(270, 460);
+            this.btnLogout.Location = new System.Drawing.Point(180, 495);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(120, 30);
-            this.btnLogout.TabIndex = 3;
+            this.btnLogout.Size = new System.Drawing.Size(80, 30);
+            this.btnLogout.TabIndex = 5;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
@@ -181,6 +206,8 @@ namespace TermProject2025.Forms
         private System.Windows.Forms.ColumnHeader colType;
         private System.Windows.Forms.ColumnHeader colDate;
         private System.Windows.Forms.Button btnAddItem;
+        private System.Windows.Forms.Button btnEditItem;
+        private System.Windows.Forms.Button btnDeleteItem;
         private System.Windows.Forms.Button btnPasswordGenerator;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.TextBox txtDetails;

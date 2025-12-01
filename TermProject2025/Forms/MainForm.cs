@@ -125,6 +125,25 @@ namespace TermProject2025.Forms
             }
         }
 
+        private void btnEditItem_Click(object sender, EventArgs e)
+        {
+            if (lstVaultItems.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select an item to edit.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var item = lstVaultItems.SelectedItems[0].Tag as VaultItem;
+            if (item != null)
+            {
+                var editItemForm = new AddEditItemForm(item);
+                if (editItemForm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadVaultItems(); // Refresh the list
+                }
+            }
+        }
+
         private void btnPasswordGenerator_Click(object sender, EventArgs e)
         {
             var passwordGenForm = new PasswordGeneratorForm();
