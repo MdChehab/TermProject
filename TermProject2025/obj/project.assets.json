@@ -2615,11 +2615,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cheha\\Desktop\\School\\CIS-476TermProject\\TermProject2025\\TermProject2025.csproj",
+      "projectUniqueName": "C:\\Users\\cheha\\Desktop\\School\\TermProject\\TermProject\\TermProject2025\\TermProject2025.csproj",
       "projectName": "TermProject2025",
-      "projectPath": "C:\\Users\\cheha\\Desktop\\School\\CIS-476TermProject\\TermProject2025\\TermProject2025.csproj",
+      "projectPath": "C:\\Users\\cheha\\Desktop\\School\\TermProject\\TermProject\\TermProject2025\\TermProject2025.csproj",
       "packagesPath": "C:\\Users\\cheha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cheha\\Desktop\\School\\CIS-476TermProject\\TermProject2025\\obj\\",
+      "outputPath": "C:\\Users\\cheha\\Desktop\\School\\TermProject\\TermProject\\TermProject2025\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -122,3 +122,14 @@ C:\Users\cheha\Desktop\School\CIS-476TermProject\TermProject2025\obj\Debug\net8.
 C:\Users\cheha\Desktop\School\CIS-476TermProject\TermProject2025\obj\Debug\net8.0-windows\TermProject2025.pdb
 C:\Users\cheha\Desktop\School\CIS-476TermProject\TermProject2025\obj\Debug\net8.0-windows\TermProject2025.genruntimeconfig.cache
 C:\Users\cheha\Desktop\School\CIS-476TermProject\TermProject2025\obj\Debug\net8.0-windows\ref\TermProject2025.dll
+C:\Users\cheha\Desktop\School\TermProject\TermProject\TermProject2025\obj\Debug\net8.0-windows\TermProject2025.csproj.AssemblyReference.cache
+C:\Users\cheha\Desktop\School\TermProject\TermProject\TermProject2025\obj\Debug\net8.0-windows\TermProject2025.Form1.resources
+C:\Users\cheha\Desktop\School\TermProject\TermProject\TermProject2025\obj\Debug\net8.0-windows\TermProject2025.csproj.GenerateResource.cache
+C:\Users\cheha\Desktop\School\TermProject\TermProject\TermProject2025\obj\Debug\net8.0-windows\TermProject2025.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cheha\Desktop\School\TermProject\TermProject\TermProject2025\obj\Debug\net8.0-windows\TermProject2025.AssemblyInfoInputs.cache
+C:\Users\cheha\Desktop\School\TermProject\TermProject\TermProject2025\obj\Debug\net8.0-windows\TermProject2025.AssemblyInfo.cs
+C:\Users\cheha\Desktop\School\TermProject\TermProject\TermProject2025\obj\Debug\net8.0-windows\TermProject2025.csproj.CoreCompileInputs.cache
+C:\Users\cheha\Desktop\School\TermProject\TermProject\TermProject2025\obj\Debug\net8.0-windows\TermProject2025.sourcelink.json
+C:\Users\cheha\Desktop\School\TermProject\TermProject\TermProject2025\obj\Debug\net8.0-windows\TermProject2025.dll
+C:\Users\cheha\Desktop\School\TermProject\TermProject\TermProject2025\obj\Debug\net8.0-windows\refint\TermProject2025.dll
+C:\Users\cheha\Desktop\School\TermProject\TermProject\TermProject2025\obj\Debug\net8.0-windows\TermProject2025.pdb

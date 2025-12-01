@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8p4NCSh+NYs=",
+  "dgSpecHash": "IEOjJAIpdnw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\cheha\\Desktop\\School\\CIS-476TermProject\\TermProject2025\\TermProject2025.csproj",
+  "projectFilePath": "C:\\Users\\cheha\\Desktop\\School\\TermProject\\TermProject\\TermProject2025\\TermProject2025.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cheha\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\cheha\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
