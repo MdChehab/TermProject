@@ -1,0 +1,191 @@
+namespace TermProject2025.Forms
+{
+    partial class MainForm
+    {
+        private System.ComponentModel.IContainer components = null;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        private void InitializeComponent()
+        {
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.lstVaultItems = new System.Windows.Forms.ListView();
+            this.colName = new System.Windows.Forms.ColumnHeader();
+            this.colType = new System.Windows.Forms.ColumnHeader();
+            this.colDate = new System.Windows.Forms.ColumnHeader();
+            this.btnAddItem = new System.Windows.Forms.Button();
+            this.btnPasswordGenerator = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.txtDetails = new System.Windows.Forms.TextBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblAutoLock = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblNotificationCount = new System.Windows.Forms.ToolStripStatusLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
+            this.SuspendLayout();
+            //
+            // splitContainer1
+            //
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            //
+            // splitContainer1.Panel1
+            //
+            this.splitContainer1.Panel1.Controls.Add(this.btnLogout);
+            this.splitContainer1.Panel1.Controls.Add(this.btnPasswordGenerator);
+            this.splitContainer1.Panel1.Controls.Add(this.btnAddItem);
+            this.splitContainer1.Panel1.Controls.Add(this.lstVaultItems);
+            //
+            // splitContainer1.Panel2
+            //
+            this.splitContainer1.Panel2.Controls.Add(this.txtDetails);
+            this.splitContainer1.Size = new System.Drawing.Size(1000, 550);
+            this.splitContainer1.SplitterDistance = 400;
+            this.splitContainer1.TabIndex = 0;
+            //
+            // lstVaultItems
+            //
+            this.lstVaultItems.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colName,
+            this.colType,
+            this.colDate});
+            this.lstVaultItems.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lstVaultItems.FullRowSelect = true;
+            this.lstVaultItems.Location = new System.Drawing.Point(0, 0);
+            this.lstVaultItems.Name = "lstVaultItems";
+            this.lstVaultItems.Size = new System.Drawing.Size(400, 450);
+            this.lstVaultItems.TabIndex = 0;
+            this.lstVaultItems.UseCompatibleStateImageBehavior = false;
+            this.lstVaultItems.View = System.Windows.Forms.View.Details;
+            this.lstVaultItems.SelectedIndexChanged += new System.EventHandler(this.lstVaultItems_SelectedIndexChanged);
+            //
+            // colName
+            //
+            this.colName.Text = "Name";
+            this.colName.Width = 200;
+            //
+            // colType
+            //
+            this.colType.Text = "Type";
+            this.colType.Width = 100;
+            //
+            // colDate
+            //
+            this.colDate.Text = "Modified";
+            this.colDate.Width = 95;
+            //
+            // btnAddItem
+            //
+            this.btnAddItem.Location = new System.Drawing.Point(10, 460);
+            this.btnAddItem.Name = "btnAddItem";
+            this.btnAddItem.Size = new System.Drawing.Size(120, 30);
+            this.btnAddItem.TabIndex = 1;
+            this.btnAddItem.Text = "Add Item";
+            this.btnAddItem.UseVisualStyleBackColor = true;
+            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
+            //
+            // btnPasswordGenerator
+            //
+            this.btnPasswordGenerator.Location = new System.Drawing.Point(140, 460);
+            this.btnPasswordGenerator.Name = "btnPasswordGenerator";
+            this.btnPasswordGenerator.Size = new System.Drawing.Size(120, 30);
+            this.btnPasswordGenerator.TabIndex = 2;
+            this.btnPasswordGenerator.Text = "Password Gen";
+            this.btnPasswordGenerator.UseVisualStyleBackColor = true;
+            this.btnPasswordGenerator.Click += new System.EventHandler(this.btnPasswordGenerator_Click);
+            //
+            // btnLogout
+            //
+            this.btnLogout.Location = new System.Drawing.Point(270, 460);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(120, 30);
+            this.btnLogout.TabIndex = 3;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            //
+            // txtDetails
+            //
+            this.txtDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDetails.Font = new System.Drawing.Font("Consolas", 10F);
+            this.txtDetails.Location = new System.Drawing.Point(0, 0);
+            this.txtDetails.Multiline = true;
+            this.txtDetails.Name = "txtDetails";
+            this.txtDetails.ReadOnly = true;
+            this.txtDetails.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtDetails.Size = new System.Drawing.Size(596, 550);
+            this.txtDetails.TabIndex = 0;
+            //
+            // statusStrip1
+            //
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblAutoLock,
+            this.lblNotificationCount});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 550);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1000, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            //
+            // lblAutoLock
+            //
+            this.lblAutoLock.Name = "lblAutoLock";
+            this.lblAutoLock.Size = new System.Drawing.Size(100, 17);
+            this.lblAutoLock.Text = "Auto-lock in: 5:00";
+            //
+            // lblNotificationCount
+            //
+            this.lblNotificationCount.Name = "lblNotificationCount";
+            this.lblNotificationCount.Size = new System.Drawing.Size(80, 17);
+            this.lblNotificationCount.Text = "Notifications: 0";
+            //
+            // MainForm
+            //
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1000, 572);
+            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.statusStrip1);
+            this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "MyPass - Vault";
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+        }
+
+        #endregion
+
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.ListView lstVaultItems;
+        private System.Windows.Forms.ColumnHeader colName;
+        private System.Windows.Forms.ColumnHeader colType;
+        private System.Windows.Forms.ColumnHeader colDate;
+        private System.Windows.Forms.Button btnAddItem;
+        private System.Windows.Forms.Button btnPasswordGenerator;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.TextBox txtDetails;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lblAutoLock;
+        private System.Windows.Forms.ToolStripStatusLabel lblNotificationCount;
+    }
+}
