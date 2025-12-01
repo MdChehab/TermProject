@@ -218,36 +218,196 @@ namespace TermProject2025.Forms
 
         private void DisplayItemDetails(VaultItem item)
         {
-            txtDetails.Clear();
-            txtDetails.AppendText($"Type: {item.Type}\r\n");
-            txtDetails.AppendText($"Created: {item.CreatedAt}\r\n");
-            txtDetails.AppendText($"Updated: {item.UpdatedAt}\r\n\r\n");
+            panelDetails.Controls.Clear();
+            int yPos = 10;
+
+            // Add header info
+            AddLabel($"Type: {item.Type}", ref yPos, true);
+            AddLabel($"Created: {item.CreatedAt}", ref yPos);
+            AddLabel($"Updated: {item.UpdatedAt}", ref yPos);
+            yPos += 10;
 
             switch (item)
             {
                 case LoginItem login:
-                    txtDetails.AppendText($"Name: {login.Name}\r\n");
-                    txtDetails.AppendText($"Username: {login.Username}\r\n");
-                    txtDetails.AppendText($"Password: ••••••••\r\n");
-                    txtDetails.AppendText($"URL: {login.Url}\r\n");
-                    txtDetails.AppendText($"Notes: {login.Notes}\r\n");
+                    AddLabel("Name:", ref yPos, true);
+                    AddTextField(login.Name, ref yPos);
+
+                    AddLabel("Username:", ref yPos, true);
+                    AddFieldWithCopy(login.Username, ref yPos, false);
+
+                    AddLabel("Password:", ref yPos, true);
+                    AddFieldWithCopy(login.Password, ref yPos, true);
+
+                    AddLabel("URL:", ref yPos, true);
+                    AddFieldWithCopy(login.Url, ref yPos, false);
+
+                    if (!string.IsNullOrEmpty(login.Notes))
+                    {
+                        AddLabel("Notes:", ref yPos, true);
+                        AddTextField(login.Notes, ref yPos);
+                    }
                     break;
+
                 case CreditCardItem card:
-                    txtDetails.AppendText($"Cardholder: {card.CardholderName}\r\n");
-                    txtDetails.AppendText($"Card Number: ••••••••\r\n");
-                    txtDetails.AppendText($"Expiration: {card.ExpirationDate.ToShortDateString()}\r\n");
-                    txtDetails.AppendText($"CVV: •••\r\n");
+                    AddLabel("Cardholder Name:", ref yPos, true);
+                    AddTextField(card.CardholderName, ref yPos);
+
+                    AddLabel("Card Number:", ref yPos, true);
+                    AddFieldWithCopy(card.CardNumber, ref yPos, true);
+
+                    AddLabel("Expiration Date:", ref yPos, true);
+                    AddTextField(card.ExpirationDate.ToString("MM/yyyy"), ref yPos);
+
+                    AddLabel("CVV:", ref yPos, true);
+                    AddFieldWithCopy(card.CVV, ref yPos, true);
+
+                    if (!string.IsNullOrEmpty(card.BillingAddress))
+                    {
+                        AddLabel("Billing Address:", ref yPos, true);
+                        AddTextField(card.BillingAddress, ref yPos);
+                    }
                     break;
+
                 case IdentityItem identity:
-                    txtDetails.AppendText($"Name: {identity.FullName}\r\n");
-                    txtDetails.AppendText($"Email: {identity.Email}\r\n");
-                    txtDetails.AppendText($"Phone: {identity.Phone}\r\n");
+                    AddLabel("Full Name:", ref yPos, true);
+                    AddTextField(identity.FullName, ref yPos);
+
+                    AddLabel("Email:", ref yPos, true);
+                    AddFieldWithCopy(identity.Email, ref yPos, false);
+
+                    AddLabel("Phone:", ref yPos, true);
+                    AddFieldWithCopy(identity.Phone, ref yPos, false);
+
+                    if (!string.IsNullOrEmpty(identity.Address))
+                    {
+                        AddLabel("Address:", ref yPos, true);
+                        AddTextField(identity.Address, ref yPos);
+                    }
+
+                    if (!string.IsNullOrEmpty(identity.SSN))
+                    {
+                        AddLabel("SSN:", ref yPos, true);
+                        AddFieldWithCopy(identity.SSN, ref yPos, true);
+                    }
+
+                    if (!string.IsNullOrEmpty(identity.PassportNumber))
+                    {
+                        AddLabel("Passport Number:", ref yPos, true);
+                        AddFieldWithCopy(identity.PassportNumber, ref yPos, true);
+                    }
+
+                    if (!string.IsNullOrEmpty(identity.LicenseNumber))
+                    {
+                        AddLabel("License Number:", ref yPos, true);
+                        AddFieldWithCopy(identity.LicenseNumber, ref yPos, true);
+                    }
                     break;
+
                 case SecureNoteItem note:
-                    txtDetails.AppendText($"Title: {note.Title}\r\n");
-                    txtDetails.AppendText($"Content: {note.Content}\r\n");
+                    AddLabel("Title:", ref yPos, true);
+                    AddTextField(note.Title, ref yPos);
+
+                    AddLabel("Content:", ref yPos, true);
+                    AddTextField(note.Content, ref yPos, true);
                     break;
             }
+        }
+
+        private void AddLabel(string text, ref int yPos, bool bold = false)
+        {
+            var label = new Label
+            {
+                Text = text,
+                Location = new System.Drawing.Point(10, yPos),
+                AutoSize = true,
+                Font = bold ? new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold) : new System.Drawing.Font("Segoe UI", 9F)
+            };
+            panelDetails.Controls.Add(label);
+            yPos += 25;
+        }
+
+        private void AddTextField(string text, ref int yPos, bool multiline = false)
+        {
+            var textBox = new TextBox
+            {
+                Text = text,
+                Location = new System.Drawing.Point(10, yPos),
+                Width = 550,
+                ReadOnly = true,
+                BackColor = System.Drawing.SystemColors.Window,
+                Multiline = multiline,
+                Height = multiline ? 80 : 23,
+                ScrollBars = multiline ? ScrollBars.Vertical : ScrollBars.None
+            };
+            panelDetails.Controls.Add(textBox);
+            yPos += multiline ? 90 : 30;
+        }
+
+        private void AddFieldWithCopy(string value, ref int yPos, bool isSensitive)
+        {
+            var textBox = new TextBox
+            {
+                Text = isSensitive ? "••••••••••••" : value,
+                Location = new System.Drawing.Point(10, yPos),
+                Width = 350,
+                ReadOnly = true,
+                BackColor = System.Drawing.SystemColors.Window,
+                Tag = new { Value = value, IsMasked = isSensitive }
+            };
+
+            var btnToggle = new Button
+            {
+                Text = isSensitive ? "Show" : "",
+                Location = new System.Drawing.Point(365, yPos - 1),
+                Width = 60,
+                Height = 25,
+                Visible = isSensitive
+            };
+
+            var btnCopy = new Button
+            {
+                Text = "Copy",
+                Location = new System.Drawing.Point(isSensitive ? 430 : 365, yPos - 1),
+                Width = 60,
+                Height = 25
+            };
+
+            if (isSensitive)
+            {
+                btnToggle.Click += (s, e) =>
+                {
+                    var tag = (dynamic)textBox.Tag;
+                    bool currentlyMasked = tag.IsMasked;
+
+                    if (currentlyMasked)
+                    {
+                        textBox.Text = tag.Value;
+                        btnToggle.Text = "Hide";
+                        textBox.Tag = new { tag.Value, IsMasked = false };
+                    }
+                    else
+                    {
+                        textBox.Text = "••••••••••••";
+                        btnToggle.Text = "Show";
+                        textBox.Tag = new { tag.Value, IsMasked = true };
+                    }
+                };
+            }
+
+            btnCopy.Click += (s, e) =>
+            {
+                var tag = (dynamic)textBox.Tag;
+                _clipboardService.CopyToClipboard(tag.Value, isSensitive);
+                MessageBox.Show($"Copied to clipboard!{(isSensitive ? " Will auto-clear in 5 minutes." : "")}",
+                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            };
+
+            panelDetails.Controls.Add(textBox);
+            panelDetails.Controls.Add(btnToggle);
+            panelDetails.Controls.Add(btnCopy);
+
+            yPos += 35;
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)

@@ -27,7 +27,7 @@ namespace TermProject2025.Forms
             this.btnDeleteItem = new System.Windows.Forms.Button();
             this.btnPasswordGenerator = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.txtDetails = new System.Windows.Forms.TextBox();
+            this.panelDetails = new System.Windows.Forms.Panel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblAutoLock = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblNotificationCount = new System.Windows.Forms.ToolStripStatusLabel();
@@ -55,7 +55,7 @@ namespace TermProject2025.Forms
             //
             // splitContainer1.Panel2
             //
-            this.splitContainer1.Panel2.Controls.Add(this.txtDetails);
+            this.splitContainer1.Panel2.Controls.Add(this.panelDetails);
             this.splitContainer1.Size = new System.Drawing.Size(1000, 550);
             this.splitContainer1.SplitterDistance = 400;
             this.splitContainer1.TabIndex = 0;
@@ -142,17 +142,16 @@ namespace TermProject2025.Forms
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             //
-            // txtDetails
+            // panelDetails
             //
-            this.txtDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDetails.Font = new System.Drawing.Font("Consolas", 10F);
-            this.txtDetails.Location = new System.Drawing.Point(0, 0);
-            this.txtDetails.Multiline = true;
-            this.txtDetails.Name = "txtDetails";
-            this.txtDetails.ReadOnly = true;
-            this.txtDetails.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtDetails.Size = new System.Drawing.Size(596, 550);
-            this.txtDetails.TabIndex = 0;
+            this.panelDetails.AutoScroll = true;
+            this.panelDetails.BackColor = System.Drawing.SystemColors.Window;
+            this.panelDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDetails.Location = new System.Drawing.Point(0, 0);
+            this.panelDetails.Name = "panelDetails";
+            this.panelDetails.Padding = new System.Windows.Forms.Padding(10);
+            this.panelDetails.Size = new System.Drawing.Size(596, 550);
+            this.panelDetails.TabIndex = 0;
             //
             // statusStrip1
             //
@@ -210,7 +209,7 @@ namespace TermProject2025.Forms
         private System.Windows.Forms.Button btnDeleteItem;
         private System.Windows.Forms.Button btnPasswordGenerator;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.TextBox txtDetails;
+        private System.Windows.Forms.Panel panelDetails;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblAutoLock;
         private System.Windows.Forms.ToolStripStatusLabel lblNotificationCount;

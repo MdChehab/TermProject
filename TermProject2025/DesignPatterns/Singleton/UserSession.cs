@@ -46,7 +46,7 @@ namespace TermProject2025.DesignPatterns.Singleton
         private UserSession()
         {
             AutoLockMinutes = 5;
-            ClipboardClearMinutes = 2;
+            ClipboardClearMinutes = 5;
         }
 
         public string? CurrentUserEmail { get; private set; }
